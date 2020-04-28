@@ -1,1 +1,2 @@
 add_subdirectory(setting_up)
+add_subdirectory(bare_bones)
