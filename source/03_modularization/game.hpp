@@ -3,40 +3,43 @@
 
 #include <SDL.h>
 
+#include <string>
+
 class Game {
-  //******************************************
-  //* Member Variables
-  //******************************************
- private:
-  bool m_gameRunning;
-  SDL_Window* m_pWindow;
-  SDL_Renderer* m_pRenderer;
+    //******************************************
+    //* Member Variables
+    //******************************************
+   private:
+    bool m_gameRunning;
+    SDL_Window* m_pWindow;
+    SDL_Renderer* m_pRenderer;
 
-  //******************************************
-  //* Constructors and Destructors
-  //******************************************
- public:
-  Game() = default;   // default constructor
-  ~Game() = default;  // default destructor
+    //******************************************
+    //* Constructors and Destructors
+    //******************************************
+   public:
+    Game() = default;   // default constructor
+    ~Game() = default;  // default destructor
 
-  //******************************************
-  //* Getters and Setters
-  //******************************************
-  bool running() { return m_gameRunning; }
+    //******************************************
+    //* Getters and Setters
+    //******************************************
+    bool running() { return m_gameRunning; }
 
-  //******************************************
-  //* Member Methods
-  //******************************************
-  // move core functions defined in 02_bare_bones here
-  void init() { m_gameRunning = true; }
+    //******************************************
+    //* Member Methods
+    //******************************************
+    // move core functions defined in 02_bare_bones here
+    bool init(const std::string title, int xpos, int ypos, int width,
+              int height, int flags);
 
-  void handleEvents() {}
+    void handleEvents();
 
-  void update() {}
+    void update();
 
-  void render() {}
+    void render();
 
-  void clean() {}
+    void clean();
 };
 
 #endif  // MODULARIZARIZATION_GAME_H
