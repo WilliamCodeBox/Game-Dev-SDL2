@@ -2,6 +2,13 @@
 
 #include "game.hpp"
 
+void Game::clean() {
+    std::cout << "Cleaning game\n";
+    SDL_DestroyWindow(m_pWindow);
+    SDL_DestroyRenderer(m_pRenderer);
+    SDL_Quit();
+}
+
 bool Game::init(const std::string title, int xpos, int ypos, int width,
                 int height, int flags) {
     // initialize SDL
@@ -35,4 +42,11 @@ bool Game::init(const std::string title, int xpos, int ypos, int width,
     std::cout << "Initialization successfully!\n";
     m_gameRunning = true;
     return true;
+}
+
+void Game::render() {
+    // clear the renderer, get ready to draw something
+    SDL_RenderClear(m_pRenderer);
+    // draw to the screen
+    SDL_RenderPresent(m_pRenderer);
 }

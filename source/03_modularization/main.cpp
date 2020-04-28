@@ -3,7 +3,7 @@
 int main(int argc, char const *argv[]) {
     Game game;
 
-    game.init();
+    game.init("Modularization", 100, 100, 640, 480, 0);
 
     while (game.running()) {
         game.handleEvents();
