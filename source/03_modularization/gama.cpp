@@ -3,14 +3,16 @@
 #include "game.hpp"
 
 void Game::clean() {
-    std::cout << "Cleaning game\n";
+    std::cout << "Cleaning game...\n";
     SDL_DestroyWindow(m_pWindow);
     SDL_DestroyRenderer(m_pRenderer);
     SDL_Quit();
+    std::cout << "Cleaning game successfully!\n";
 }
 
 bool Game::init(const std::string title, int xpos, int ypos, int width,
                 int height, int flags) {
+    std::cout << ">>> SDL Initialization...\n";
     // initialize SDL
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
         std::cout << "SDL inits successfully!" << std::endl;
@@ -39,7 +41,7 @@ bool Game::init(const std::string title, int xpos, int ypos, int width,
         return false;
     }
 
-    std::cout << "Initialization successfully!\n";
+    std::cout << ">>> SDL initialization successfully!\n";
     m_gameRunning = true;
     return true;
 }
@@ -49,4 +51,8 @@ void Game::render() {
     SDL_RenderClear(m_pRenderer);
     // draw to the screen
     SDL_RenderPresent(m_pRenderer);
+
+    // do nothing but delay 5000ms for demo
+    SDL_Delay(5000);
+    this->m_gameRunning = false;
 }

@@ -33,9 +33,9 @@ class Game {
     bool init(const std::string title, int xpos, int ypos, int width,
               int height, int flags);
 
-    void handleEvents();
+    void handleEvents() {}
 
-    void update();
+    void update() {}
 
     void render();
 

@@ -1,5 +1,8 @@
 #include <SDL.h>
 
+// Flag for the while loop
+bool gameRunning = true;
+
 // initialize SDL and create window
 void init() {}
 
@@ -14,8 +17,7 @@ void render() {
 // clean up program
 void clean() {}
 
-// Flag for the while loop
-bool gameRunning = true;
+
 
 int main(int argc, char const *argv[]) {
   init();
