@@ -12,5 +12,6 @@ int main(int argc, char const *argv[]) {
     }
 
     game->clean();
+    delete game;
     return 0;
 }

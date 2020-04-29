@@ -3,11 +3,11 @@
 #include "game.hpp"
 
 void Game::clean() {
-    std::cout << "Cleaning game...\n";
+    std::cout << ">>> Cleaning game...\n";
     SDL_DestroyWindow(m_pWindow);
     SDL_DestroyRenderer(m_pRenderer);
     SDL_Quit();
-    std::cout << "Cleaning game successfully!\n";
+    std::cout << "<<< Cleaning game successfully!\n";
 }
 
 bool Game::init(const std::string title, int xpos, int ypos, int width,
@@ -41,7 +41,7 @@ bool Game::init(const std::string title, int xpos, int ypos, int width,
         return false;
     }
 
-    std::cout << ">>> SDL initialization successfully!\n";
+    std::cout << "<<< SDL initialization successfully!\n";
     m_gameRunning = true;
     return true;
 }
